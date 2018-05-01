@@ -1,0 +1,56 @@
+version: '3.1'
+
+services:
+        tomcatserver:
+                image: tomcat:latest
+                container_name: tomcat
+                ports:
+                        - "8080:8080"
+                hostname: localhost
+
+        mongodb:
+                image: mongo:latest
+                container_name: mongodb
+                environment:
+                        - MONGO_DATA_DIR=/data/db
+                        - MONGO_LOG_DIR=/dev/null
+                volumes:
+                        - ./data/db:/data/db
+                ports:
+                        - 27017:27017
+                hostname: localhost
+                command: mongod --smallfiles
+
+        app:
+                container_name: backend
+                restart: always
+                build: ./backend
+                working_dir: /backend
+                volumes:
+                        - ./backend:/backend
+                        - ~/.m2:/root/.m2
+                expose:
+                        - "8080"
+                command: mvn clean spring-boot:run
+                depends_on:
+                        - tomcatserver
+                        - mongodb
+                links:
+                        - mongodb:mongo
+
+        browser:
+                image: jess/firefox
+                container_name: firefox
+                depends_on:
+                        - tomcatserver
+                links:
+                        - tomcatserver:tomcat
+                environment:
+                        - DISPLAY
+                volumes:
+                        - /tmp/.X11-unix:/tmp/.X11-unix
+                ports:
+                        - "5800:5800"
+                hostname: firefox
+                command: firefox --new-instance http://localhost:8080
+

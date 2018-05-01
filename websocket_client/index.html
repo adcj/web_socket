@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngApp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+
+        <title>Admin Portal</title>
+
+        <link rel="stylesheet" href="resource/css/lib/bootstrap.css" />
+        <link rel="stylesheet" href="resource/css/custom/app.css" />
+
+        <script type="text/javascript" src="js/lib/angular/angular.js"></script>
+        <script type="text/javascript" src="js/lib/angular/angular-resource.js"></script>
+        <script type="text/javascript" src="js/lib/angular/angular-route.js"></script>
+        <script type="text/javascript" src="js/lib/util/sockjs.js"></script>
+        <script type="text/javascript" src="js/lib/util/stomp.js"></script>
+        
+        <!-- Custom JS: Modules -->
+        <script type="text/javascript" src="js/custom/services/ngUtil.js"></script>
+        <script type="text/javascript" src="js/custom/services/ngWebSocket.js"></script>
+        
+        <!-- Custom JS: Models -->
+        
+        <!-- Custom JS: Controllers -->
+        <script type="text/javascript" src="js/custom/controllers/NotificationController.js"></script>
+        
+        <!-- Custom JS: Main -->
+        <script type="text/javascript" src="js/custom/app.js"></script>
+    </head>
+
+    <body ng-view>
+    </body>
+</html>
