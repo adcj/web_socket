@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import com.anirbandc.ws.domain.MessageDomain;
 import com.anirbandc.ws.util.AppLog;
-import com.anirbandc.ws.util.AppUtil;
 
 @Component("messageConsumer")
 public class MessageConsumer implements MessageListener {
@@ -27,6 +26,6 @@ public class MessageConsumer implements MessageListener {
 
 		appLog.printLog(Level.INFO, "onMessage", "Message received: " + messageBody);
 
-		messageDomain.addMessageToMongoDB(AppUtil.convertObjectToJson(messageBody));
+		messageDomain.addMessageToMongoDB(messageBody);
 	}
 }
