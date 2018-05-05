@@ -5,14 +5,19 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 
+/**
+ * This class contains all global constants and variables.
+ * 
+ * @author Anirban DC
+ */
 public class AppConstant {
 	/* Greeting Messages */
-	public static final String HOME_CONTROLLER_GREETING = "Welcome to Data Processing Pipeline";
+	public static final String HOME_CONTROLLER_GREETING = "Welcome to WebSocket (with Redis and MongoDB) sample project.";
 
 	/*
 	 * Hash Maps: Must be initialized during Application initialization
 	 */
-	public static final Map<Integer, HttpStatus> APP_HTTP_ERROR_CODE = new HashMap<>();
+	protected static final Map<Integer, HttpStatus> APP_HTTP_ERROR_CODE = new HashMap<>();
 
 	/* Application Constants */
 	public static final String DATE_FORMAT = "MM/dd/yyyy";
@@ -27,7 +32,7 @@ public class AppConstant {
 	public static final int HTTP_STATUS_UNSUPPORTED_MEDIA_TYPE = 5;
 	public static final int HTTP_STATUS_UNPROCESSABLE_ENTITY = 6;
 	public static final int HTTP_STATUS_INTERNAL_SERVER_ERROR = 6;
-	
+
 	/* Redis Message */
 	public static final String CHANNEL_TOPIC = "msg_queue";
 
@@ -36,6 +41,17 @@ public class AppConstant {
 
 	private AppConstant() {
 		/* Default Constructor (Private) */
+	}
+
+	/**
+	 * Retrieve HTTP Status from Hash Map, based on code (defined within the
+	 * Hash Map)
+	 * 
+	 * @param code
+	 * @return {@link HttpStatus}
+	 */
+	public static final HttpStatus getHttpStatusCode(final int code) {
+		return APP_HTTP_ERROR_CODE.get(code);
 	}
 
 	/**

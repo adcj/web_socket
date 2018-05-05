@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.anirbandc.ws.util;
 
 import java.io.IOException;
@@ -10,6 +7,11 @@ import java.util.concurrent.TimeUnit;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * This class exposes common utility methods.
+ * 
+ * @author Anirban DC
+ */
 public class AppUtil {
 	private AppUtil() {
 		/* Default Constructor (Private) */

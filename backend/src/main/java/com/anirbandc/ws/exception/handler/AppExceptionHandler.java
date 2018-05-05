@@ -22,7 +22,7 @@ import com.anirbandc.ws.web.message.GenericErrorResponse;
 
 @ControllerAdvice(annotations = RestController.class)
 public class AppExceptionHandler {
-	private final String RESPONSE_PREFIX = "Response >> ";
+	private static final String RESPONSE_PREFIX = "Response >> ";
 	private final AppLog appLog = new AppLog(getClass());
 
 	/**
@@ -42,7 +42,7 @@ public class AppExceptionHandler {
 
 		appLog.printLog(Level.ERROR, methodName, RESPONSE_PREFIX + AppUtil.convertObjectToJson(genericErrorResponse));
 
-		return ResponseEntity.status(AppConstant.APP_HTTP_ERROR_CODE.get(httpStatusCode)).body(genericErrorResponse);
+		return ResponseEntity.status(AppConstant.getHttpStatusCode(httpStatusCode)).body(genericErrorResponse);
 	}
 
 	/**
@@ -92,8 +92,6 @@ public class AppExceptionHandler {
 	@ExceptionHandler(value = Exception.class)
 	public ResponseEntity<AbstractResponse> handleException(final Exception exception) {
 		String methodName = "handleException";
-
-		exception.printStackTrace();
 
 		ExceptionDetail exceptionDetail = new ExceptionDetail(ResponseCode.UNCAUGHT.getReason(),
 				exception.getMessage());
