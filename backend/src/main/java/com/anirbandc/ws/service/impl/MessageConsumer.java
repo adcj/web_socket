@@ -9,6 +9,17 @@ import org.springframework.stereotype.Component;
 import com.anirbandc.ws.domain.MessageDomain;
 import com.anirbandc.ws.util.AppLog;
 
+/**
+ * This service class defines the functionality of onMessage method of (Redis)
+ * {@link MessageListener} interface.<br/>
+ * <br/>
+ * 
+ * Whenever a new message is received, onMessage calls
+ * {@link MessageDomain}.addMessageToMongoDB() method which in turn persists the
+ * message into MongoDB.
+ * 
+ * @author Anirban DC
+ */
 @Component("messageConsumer")
 public class MessageConsumer implements MessageListener {
 	@Autowired

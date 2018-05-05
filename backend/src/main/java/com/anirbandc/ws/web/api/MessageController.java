@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.anirbandc.ws.web.api;
 
 import javax.validation.Valid;
@@ -27,6 +24,13 @@ import com.anirbandc.ws.web.message.AbstractResponse;
 import com.anirbandc.ws.web.message.GenericSuccessResponse;
 import com.anirbandc.ws.web.message.response.MessageListResponse;
 
+/**
+ * 
+ * This (REST) controller receives all message related requests and returns
+ * appropriate response back to clients.
+ * 
+ * @author Anirban DC
+ */
 @RestController
 @RequestMapping(value = "/message")
 public class MessageController {

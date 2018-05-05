@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.anirbandc.ws.util.AppConstant;
 
+/**
+ * (REST) Controller that overrides the root path behavior. Displays a custom
+ * project specific message.
+ * 
+ * @author Anirban DC
+ */
 @RestController
 @RequestMapping(value = "/")
 public class HomeController {

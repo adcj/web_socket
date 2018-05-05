@@ -12,6 +12,12 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import com.anirbandc.ws.service.impl.MessageConsumer;
 import com.anirbandc.ws.util.AppConstant;
 
+/**
+ * Redis configuration. This is where Redis connection is established and
+ * appropriate listener is initialized.
+ * 
+ * @author Anirban DC
+ */
 @Configuration
 public class RedisConfig {
 	@Autowired

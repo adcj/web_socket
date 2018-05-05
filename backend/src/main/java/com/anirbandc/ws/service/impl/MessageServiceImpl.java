@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.anirbandc.ws.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +11,11 @@ import com.anirbandc.ws.web.message.AbstractResponse;
 import com.anirbandc.ws.web.message.GenericSuccessResponse;
 import com.anirbandc.ws.web.message.response.MessageListResponse;
 
+/**
+ * Implementation of {@link MessageService} interface methods
+ * 
+ * @author Anirban DC
+ */
 @Service("messageService")
 public class MessageServiceImpl implements MessageService {
 	@Autowired(required = true)

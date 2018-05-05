@@ -16,6 +16,12 @@ import com.anirbandc.ws.domain.redis.repo.MessageRRepo;
 import com.anirbandc.ws.dto.MessageDTO;
 import com.anirbandc.ws.util.AppUtil;
 
+/**
+ * Implementation of {@link MessageDomain} interface methods
+ * 
+ * @author Anirban DC
+ *
+ */
 @Component("messageDomain")
 public class MessageDomainImpl implements MessageDomain {
 	@Autowired(required = true)
@@ -31,9 +37,7 @@ public class MessageDomainImpl implements MessageDomain {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * com.falconio.dpp.domain.MessageDomain#addMessage(com.falconio.dpp.dto.
-	 * MessageDTO)
+	 * @see com.falconio.dpp.domain.MessageDomain#addMessageToRedis()
 	 */
 	@Override
 	public void addMessageToRedis(final MessageDTO messageDTO) {
@@ -41,7 +45,12 @@ public class MessageDomainImpl implements MessageDomain {
 
 		messageRRepo.addMessage(messageR);
 	}
-
+	
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.falconio.dpp.domain.MessageDomain#addMessageToMongoDB()
+	 */
 	@Override
 	public void addMessageToMongoDB(final Object message) {
 		messageRepo.save(new Message(message));
