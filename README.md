@@ -10,7 +10,7 @@ The primary target for this code sample is to design and develop a Java Back-end
 For testing purposes, there is also a simple browser client/front-end that will display the new messages broadcasted from the back-end
 
 ## High Level Design:
-![Image](dpp.png)
+![Image](hld.png)
 
 ## Technologies/Tools/Frameworks used:
 - Java JEE / Spring Boot
