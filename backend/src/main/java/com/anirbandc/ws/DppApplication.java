@@ -6,7 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
-@EnableMongoRepositories(basePackages = "com.falconio.dpp.domain.mongodb.repo")
+@EnableMongoRepositories(basePackages = "com.anirbandc.ws.domain.mongodb.repo")
 @PropertySource("classpath:/application.properties")
 public class DppApplication {
 	public static void main(String[] args) {

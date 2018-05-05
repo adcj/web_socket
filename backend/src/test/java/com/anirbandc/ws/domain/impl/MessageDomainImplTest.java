@@ -117,6 +117,6 @@ public class MessageDomainImplTest {
 
 		verify(messageRepo, times(1)).findAll();
 
-		assertNotNull(messages);
+		assertNull(messages);
 	}
 }
