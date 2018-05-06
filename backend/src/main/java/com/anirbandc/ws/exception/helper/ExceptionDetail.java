@@ -11,9 +11,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * appropriate message field of {@link ErrorCause} ENUM</li>
  * <li><b>causeDesc:</b> Actual cause of the error. This is initialized with
  * appropriate desc (description) field of {@link ErrorCause} ENUM</li>
- * <li><b>date:</b> Server date, referring to the date when the error occurred</li>
- * <li><b>time:</b> Server time, referring to the time when the error occurred</li>
- * <li><b>time:</b> Server timestamp, referring to the timestamp when the error occurred</li>
+ * <li><b>date:</b> Server date, referring to the date when the error
+ * occurred</li>
+ * <li><b>time:</b> Server time, referring to the time when the error
+ * occurred</li>
+ * <li><b>timestamp:</b> Server timestamp, referring to the timestamp when the
+ * error occurred</li>
  * </ul>
  * These details are mostly used for recording a human readable format of the
  * cause of error.

@@ -4,6 +4,12 @@ import com.anirbandc.ws.exception.base.AppBusinessException;
 import com.anirbandc.ws.exception.helper.ExceptionDetail;
 import com.anirbandc.ws.util.AppConstant;
 
+/**
+ * This class can be used throw custom (runtime) forbidden exception. HTTP
+ * status code for this type of exception will be 403
+ * 
+ * @author Anirban DC
+ */
 public class ForbiddenException extends AppBusinessException {
 	private static final long serialVersionUID = 5951927527132322535L;
 
