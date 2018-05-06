@@ -20,6 +20,13 @@ import com.anirbandc.ws.util.AppUtil;
 import com.anirbandc.ws.web.message.AbstractResponse;
 import com.anirbandc.ws.web.message.GenericErrorResponse;
 
+/**
+ * This class catches all types of runtime exceptions and returns appropriate
+ * custom response to the client/front-end. No exception goes out of the server
+ * without being processed here.
+ * 
+ * @author Anirban DC
+ */
 @ControllerAdvice(annotations = RestController.class)
 public class AppExceptionHandler {
 	private static final String RESPONSE_PREFIX = "Response >> ";
@@ -29,7 +36,8 @@ public class AppExceptionHandler {
 	 * Catch application level custom exceptions and returns error response
 	 * 
 	 * @param appException
-	 * @return AbstractResponse: instance of GenericErrorResponse
+	 * @return {@link AbstractResponse}: instance of
+	 *         {@link GenericErrorResponse}
 	 */
 	@ExceptionHandler(value = AppException.class)
 	public ResponseEntity<AbstractResponse> handleApiException(final AppException appException) {
@@ -49,7 +57,8 @@ public class AppExceptionHandler {
 	 * Catch custom input (JSON) validation errors and return appropriate error
 	 * 
 	 * @param exception
-	 * @return AbstractResponse: instance of GenericErrorResponse
+	 * @return {@link AbstractResponse}: instance of
+	 *         {@link GenericErrorResponse}
 	 */
 	@ExceptionHandler(value = MethodArgumentNotValidException.class)
 	public ResponseEntity<AbstractResponse> handleMethodArgumentNotValidException(final Exception exception) {
@@ -68,6 +77,14 @@ public class AppExceptionHandler {
 		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(genericErrorResponse);
 	}
 
+	/**
+	 * Catch malformed request body error and returns appropriate error
+	 * response.
+	 * 
+	 * @param exception
+	 * @return {@link AbstractResponse}: instance of
+	 *         {@link GenericErrorResponse}
+	 */
 	@ExceptionHandler(value = HttpMessageNotReadableException.class)
 	public ResponseEntity<AbstractResponse> handleMessageNotReadableException(final Exception exception) {
 		String methodName = "handleMessageNotReadableException";
@@ -87,7 +104,8 @@ public class AppExceptionHandler {
 	 * Catch application level global Exception and returns error response
 	 * 
 	 * @param exception
-	 * @return AbstractResponse: instance of GenericErrorResponse
+	 * @return {@link AbstractResponse}: instance of
+	 *         {@link GenericErrorResponse}
 	 */
 	@ExceptionHandler(value = Exception.class)
 	public ResponseEntity<AbstractResponse> handleException(final Exception exception) {
@@ -105,7 +123,7 @@ public class AppExceptionHandler {
 	}
 
 	/**
-	 * Construct and returns application level bad request exception
+	 * Construct and returns application level bad request exception.
 	 * 
 	 * @param exception
 	 * @return BadRequestException

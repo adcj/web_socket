@@ -3,6 +3,20 @@ package com.anirbandc.ws.exception.helper;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This ENUM holds the error cause details for all validation errors 
+ * caught by following annotations:
+ * <ul>
+ * <li><b>Size</b></li>
+ * <li><b>NotNull</b></li>
+ * <li><b>NotEmpty</b></li>
+ * </ul>
+ * These details are used to construct instances of {@link ExceptionDetail} class. 
+ * The same is also used by {@link ValidationErrorBuilder} class for the same 
+ * purposes.
+ * 
+ * @author Anirban DC
+ */
 public enum ErrorCause {
 	/* Internal error */
 	NA("NA", "[CRITICAL] No additional details available for this error"),

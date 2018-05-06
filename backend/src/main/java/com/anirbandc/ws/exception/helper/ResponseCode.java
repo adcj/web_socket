@@ -3,6 +3,17 @@ package com.anirbandc.ws.exception.helper;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.anirbandc.ws.web.message.GenericErrorResponse;
+
+/**
+ * This ENUM is used for setting the status message of 
+ * {@link GenericErrorResponse} class.<br/>
+ * Whenever an error response is returned by the server,
+ * appropriate status message corresponding to any one of
+ * the following is used.
+ * 
+ * @author Anirban DC
+ */
 public enum ResponseCode {
 	/* ================= SERVICE: GENERIC - START ================= */
 	/* Generic Success */

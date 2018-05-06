@@ -5,11 +5,31 @@ import java.util.List;
 import java.util.Locale;
 
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import com.anirbandc.ws.exception.UnprocessableEntityException;
 import com.anirbandc.ws.util.AppConstant;
 
+/**
+ * This class parses the custom error messages for the following annotations in
+ * request bodies:
+ * <ul>
+ * <li><b>Size</b></li>
+ * <li><b>NotNull</b></li>
+ * <li><b>NotEmpty</b></li>
+ * </ul>
+ * In short it processes all errors captured by
+ * {@link MethodArgumentNotValidException}<br/>
+ * Once processed, returns an instance of {@link UnprocessableEntityException}
+ * class with appropriate error details.<br/>
+ * Uses Builder design pattern
+ * 
+ * @author Anirban DC
+ */
 public class ValidationErrorBuilder {
+	/**
+	 * Default constructor
+	 */
 	private ValidationErrorBuilder() {
 		/* Default Constructor (Private) */
 	}

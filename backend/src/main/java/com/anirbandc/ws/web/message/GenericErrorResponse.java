@@ -26,8 +26,8 @@ public class GenericErrorResponse extends AbstractResponse {
 	 * Constructor for error response<br/>
 	 * <br/>
 	 * <b>reason</b>: code for HTTP status indicating cause of error. Code can
-	 * be found in {@link AppConstant} APP_HTTP_ERROR_CODE. Mainly comes in
-	 * handy for {@link AppException} errors.</br>
+	 * be found in {@link AppConstant} APP_HTTP_ERROR_CODE variable. Mainly
+	 * comes in handy for {@link AppException} errors.</br>
 	 * <b>exceptionDetail</b>: contains more user friendly details with respect
 	 * to a given error. Refer to {@link ExceptionDetail} for details.
 	 * 
