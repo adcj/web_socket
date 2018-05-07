@@ -29,7 +29,7 @@ Endpoint: /message
 Type: REST endpoint
 HTTP method: POST
 Headers:
-- Content Type: application/json
+Content Type: application/json
 Purpose: add new message. This message will be broadcasted to client using WebSocket
 Sample Payload:
 {
@@ -48,7 +48,7 @@ Endpoint: /message
 Type: REST endpoint
 HTTP method: GET
 Headers:
-- Content Type: application/json
+Content Type: application/json
 Purpose: retrieve all stored messages (from MongoDB)
 Sample Response:
 {
