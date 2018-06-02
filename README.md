@@ -32,14 +32,18 @@ Headers:
 Content Type: application/json
 Purpose: add new message. This message will be broadcasted to client using WebSocket
 Sample Payload:
+<pre>
 {
     "message": "Some message"
 }
+</pre>
+<pre>
 Sample Response:
 {
     "status": "OK",
     "status_message: ""
 }
+</pre>
 Sample endpoint URL: 
 If deployed in localhost, then the URL will look like the following:
 http://localhost:8080/websocket/message
