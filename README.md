@@ -26,11 +26,11 @@ For testing purposes, there is also a simple browser client/front-end that will 
 
 ## Exposed endpoints:
 ### Endpoint: /message
-Type: REST endpoint
-HTTP method: POST
+Type: REST endpoint<br/>
+HTTP method: POST<br/>
 Headers:
-Content Type: application/json
-Purpose: add new message. This message will be broadcasted to client using WebSocket
+<pre>Content Type: application/json</pre>
+Purpose: add new message. This message will be broadcasted to client using WebSocket.<br/>
 Sample Payload:
 <pre>
 {
@@ -46,16 +46,16 @@ Sample Response:
 }
 </pre>
 
-Sample endpoint URL: 
-If deployed in localhost, then the URL will look like the following:
+Sample endpoint URL:<br/>
+If deployed in localhost, then the URL will look like the following:<br/>
 http://localhost:8080/websocket/message
 
 ### Endpoint: /message
-Type: REST endpoint
-HTTP method: GET
+Type: REST endpoint<br/>
+HTTP method: GET<br/>
 Headers:
-Content Type: application/json
-Purpose: retrieve all stored messages (from MongoDB)
+<pre>Content Type: application/json</pre>
+Purpose: retrieve all stored messages (from MongoDB)<br/>
 Sample Response:
 <pre>
 {
@@ -65,16 +65,16 @@ Sample Response:
 }
 </pre>
 
-Sample endpoint URL: 
-If deployed in localhost, then the URL will look like the following:
+Sample endpoint URL:<br/>
+If deployed in localhost, then the URL will look like the following:<br/>
 http://localhost:8080/websocket/message
 
 ### Endpoint: /socket/newmsg
-Type: WebSocket
-Purpose: Front-end client will subscribe to this endpoint. All new messages, received by server, will be broadcasted through this endpoint to all subscribed clients.
+Type: WebSocket<br/>
+Purpose: Front-end client will subscribe to this endpoint. All new messages, received by server, will be broadcasted through this endpoint to all subscribed clients.<br/>
 
-Sample endpoint URL: 
-If deployed in localhost, then the URL will look like the following:
+Sample endpoint URL:<br/>
+If deployed in localhost, then the URL will look like the following:<br/>
 http://localhost:8080/websocket/socket/newmsg
 
 ## Execution:
