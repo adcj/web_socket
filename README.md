@@ -95,9 +95,9 @@ Linux environment is preferred for Docker and Redis
 - Change "spring.redis.host=redis" to "spring.redis.host=localhost"
 - For custom configuration of MongoDB (port, database, username, and password), please uncomment and modify the following lines:
 <pre>
-spring.data.mongodb.port=<custom port number as assigned during installation or mongodb configuration>
-spring.data.mongodb.username=<mongodb user name>
-spring.data.mongodb.password=<mongodb password>
+spring.data.mongodb.port=3100 (custom port number as assigned during installation or mongodb configuration)
+spring.data.mongodb.username=username (mongodb user name)
+spring.data.mongodb.password=password (mongodb password)
 spring.data.mongodb.database=local (or any other database name)
 spring.data.mongodb.authentication-database=admin
 Note: The above configuration should be modified carefully. Else, entire functionality will break.
