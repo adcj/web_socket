@@ -100,8 +100,8 @@ spring.data.mongodb.username=username (mongodb user name)
 spring.data.mongodb.password=password (mongodb password)
 spring.data.mongodb.database=local (or any other database name)
 spring.data.mongodb.authentication-database=admin
-Note: The above configuration should be modified carefully. Else, entire functionality will break.
 </pre>
+Note: The above configuration should be modified carefully. Else, entire functionality will break.
 11. Run the application on Tomcat Server (Eclipse)
 
 ### Steps (Client) - without docker-compose:
