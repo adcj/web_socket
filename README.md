@@ -25,7 +25,7 @@ For testing purposes, there is also a simple browser client/front-end that will 
 - Docker
 
 ## Exposed endpoints:
-Endpoint: /message
+### Endpoint: /message
 Type: REST endpoint
 HTTP method: POST
 Headers:
@@ -37,36 +37,42 @@ Sample Payload:
     "message": "Some message"
 }
 </pre>
-<pre>
+
 Sample Response:
+<pre>
 {
     "status": "OK",
     "status_message: ""
 }
 </pre>
+
 Sample endpoint URL: 
 If deployed in localhost, then the URL will look like the following:
 http://localhost:8080/websocket/message
 
-Endpoint: /message
+### Endpoint: /message
 Type: REST endpoint
 HTTP method: GET
 Headers:
 Content Type: application/json
 Purpose: retrieve all stored messages (from MongoDB)
 Sample Response:
+<pre>
 {
     "status": "OK",
     "status_message: "",
     "result": ""
 }
+</pre>
+
 Sample endpoint URL: 
 If deployed in localhost, then the URL will look like the following:
 http://localhost:8080/websocket/message
 
-Endpoint: /socket/newmsg
+### Endpoint: /socket/newmsg
 Type: WebSocket
 Purpose: Front-end client will subscribe to this endpoint. All new messages, received by server, will be broadcasted through this endpoint to all subscribed clients.
+
 Sample endpoint URL: 
 If deployed in localhost, then the URL will look like the following:
 http://localhost:8080/websocket/socket/newmsg
@@ -88,14 +94,14 @@ Linux environment is preferred for Docker and Redis
 - Change "spring.data.mongodb.host=mongodb" to "spring.data.mongodb.host=localhost"
 - Change "spring.redis.host=redis" to "spring.redis.host=localhost"
 - For custom configuration of MongoDB (port, database, username, and password), please uncomment and modify the following lines:
-
+<pre>
 spring.data.mongodb.port=<custom port number as assigned during installation or mongodb configuration>
 spring.data.mongodb.username=<mongodb user name>
 spring.data.mongodb.password=<mongodb password>
 spring.data.mongodb.database=local (or any other database name)
 spring.data.mongodb.authentication-database=admin
 Note: The above configuration should be modified carefully. Else, entire functionality will break.
-
+</pre>
 11. Run the application on Tomcat Server (Eclipse)
 
 ### Steps (Client) - without docker-compose:
